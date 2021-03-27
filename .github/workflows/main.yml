@@ -38,7 +38,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: cfe84/airbnb-report:${{ github.sha }}
+          tags: cfe84/autobob:${{ github.sha }}
       - name: Deploy to kubernetes
         run: |
           helm template ./chart  --set bot.id=${{ secrets.BOTSERVICE_ID }} --set bot.password=${{ secrets.BOTSERVICE_PASSWORD }} --set containerTag=${{ github.sha }} | kubectl apply -f -
