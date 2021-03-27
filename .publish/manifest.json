@@ -1,0 +1,60 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.9",
+    "version": "{version}",
+    "id": "{appid}",
+    "packageName": "com.autobob.search",
+    "developer": {
+        "name": "Charles",
+        "websiteUrl": "{baseUrl0}",
+        "privacyUrl": "{baseUrl1}/privacy",
+        "termsOfUseUrl": "{baseUrl1}/terms"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "{appname}",
+        "full": "{fullappname}"
+    },
+    "description": {
+        "short": "Autobo",
+        "full": "Search"
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [
+        {
+            "botId": "{botId0}",
+            "canUpdateConfiguration": true,
+            "commands": [
+                {
+                    "id": "search",
+                    "type": "query",
+                    "title": "Search",
+                    "description": "",
+                    "initialRun": true,
+                    "fetchTask": false,
+                    "context": [
+                        "commandBox",
+                        "compose",
+                        "message"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "searchQuery",
+                            "title": "Search",
+                            "description": "",
+                            "inputType": "text"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}
