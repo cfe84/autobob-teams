@@ -1,0 +1,5 @@
+namespace: autobob
+containerTag: latest
+bot:
+  id: ""
+  password: ""

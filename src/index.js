@@ -57,7 +57,6 @@ server.listen(port, () =>
 // Listen for incoming requests.
 server.post('/api/messages', (req, res) => {
     adapter.processActivity(req, res, async (context) => {
-        console.log(req.body)
         // Process bot activity
         await botActivityHandler.run(context);
     });

@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  namespace: {{ .Values.namespace }}
+  name: autobob
+spec:
+  template:
+    metadata:
+      labels:
+        app: autobob
+    spec:
+      containers:
+      - name: autobob-container
+        image: cfe84/autobob:{{ .Values.containerTag }}
+        env:
+        # - name: AIRBNB_CONFIG_FILE
+        #   value: {{ .Values.configFile }}
+        - name: BotId
+          value: {{ .Values.bot.id }}
+        - name: BotPassword
+          value: {{ .Values.bot.password }}
