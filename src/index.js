@@ -17,7 +17,6 @@ const { BotActivityHandler } = require('./infrastructure/BotActivityHandler');
 // Read botFilePath and botFileSecret from .env file.
 require('dotenv').config();
 
-console.log("" + process.env.BotId + " - " + process.env.BotPassword)
 // Create adapter.
 // See https://aka.ms/about-bot-adapter to learn more about adapters.
 const adapter = new BotFrameworkAdapter({
